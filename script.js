@@ -22,7 +22,10 @@ operatorButtons.forEach(button =>
             firstNum = tempDispValue
         } else {
             secondNum = tempDispValue;
-            firstNum = Math.round((operate() + Number.EPSILON) * 100) / 100;
+            if (operator == '/' && secondNum == 0) {
+                tempDispValue = 'nope';
+                return display.textContent = tempDispValue;}
+            else {firstNum = Math.round((operate() + Number.EPSILON) * 100) / 100};
         };
         operator = this.textContent;
         tempDispValue = '';
@@ -30,7 +33,8 @@ operatorButtons.forEach(button =>
 
 equalButton.addEventListener('click', function() {
     secondNum = tempDispValue;
-    tempDispValue = Math.round((operate() + Number.EPSILON) * 100) / 100;
+    if (operator == '/' && secondNum == 0) {tempDispValue = 'nope'}
+    else {tempDispValue = Math.round((operate() + Number.EPSILON) * 100) / 100};
     display.textContent = tempDispValue;
 });
 
@@ -42,13 +46,9 @@ clearButton.addEventListener('click', function() {
     secondNum = undefined;
 });
 
-// function round() {
-//    return Math.round((operate() + Number.EPSILON) * 100) / 100
-// }
-
 function operate() {
-    if (operator == '+') {return +firstNum + +secondNum;}
-    if (operator == '-') {return +firstNum - +secondNum;}
-    if (operator == '*') {return +firstNum * +secondNum;}
-    if (operator == '/') {return +firstNum / +secondNum;}
+    if (operator == '+') {return +firstNum + +secondNum};
+    if (operator == '-') {return +firstNum - +secondNum};
+    if (operator == '*') {return +firstNum * +secondNum};
+    if (operator == '/') {return +firstNum / +secondNum};
 };

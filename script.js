@@ -22,7 +22,7 @@ operatorButtons.forEach(button =>
             firstNum = tempDispValue
         } else {
             secondNum = tempDispValue;
-            firstNum = operate();
+            firstNum = Math.round((operate() + Number.EPSILON) * 100) / 100;
         };
         operator = this.textContent;
         tempDispValue = '';
@@ -30,7 +30,7 @@ operatorButtons.forEach(button =>
 
 equalButton.addEventListener('click', function() {
     secondNum = tempDispValue;
-    tempDispValue = operate();
+    tempDispValue = Math.round((operate() + Number.EPSILON) * 100) / 100;
     display.textContent = tempDispValue;
 });
 
@@ -41,6 +41,10 @@ clearButton.addEventListener('click', function() {
     operator = undefined; 
     secondNum = undefined;
 });
+
+// function round() {
+//    return Math.round((operate() + Number.EPSILON) * 100) / 100
+// }
 
 function operate() {
     if (operator == '+') {return +firstNum + +secondNum;}

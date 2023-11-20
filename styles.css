@@ -4,6 +4,7 @@
     padding: 0;
     text-align: center;
     background-color: #323232;
+    font-family: sans-serif;
 }
 
 .calc-body {
@@ -32,7 +33,7 @@
     width: 360px;
     border-radius: 5px;
     margin: 5px;
-    padding-right: 5px;
+    padding-right: 10px;
     background-color: #352F44;
     color: azure;
     font-size: 75px;
@@ -43,6 +44,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    border: 0px solid transparent;
     background-color: #B9B4C7;
     margin: 4px;
     width: 80px;
@@ -52,8 +54,10 @@
     color: azure;
     font-size: 40px;
 }
+
 .large-button {
     display: flex;
+    border: 0px solid transparent;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -64,4 +68,20 @@
     border-radius: 12px;
     color: azure;
     font-size: 40px;
+}
+
+.button:hover {
+    background-color: #a39eaf;
+}
+
+.button:active {
+    background-color: #8c8896
+}
+
+.large-button:hover {
+    background-color: #a39eaf;
+}
+
+.large-button:active {
+    background-color: #8c8896
 }

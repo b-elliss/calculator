@@ -10,7 +10,6 @@ const deleteButton = document.querySelector('#delete-button');
 const numberButtons = document.querySelectorAll('#number-button');
 const operatorButtons = document.querySelectorAll('#operator-button');
 
-
 numberButtons.forEach(button => 
     button.addEventListener('click', function() {
         if (display.textContent == 'ERROR' || display.textContent == 'nope') {
@@ -75,12 +74,6 @@ equalButton.addEventListener('click', function() {
         secondNum = undefined;
     };
     display.textContent = sum;
-    console.log(tempValue);
-    console.log(firstNum);
-    console.log(operator);
-    console.log(secondNum);
-    console.log(sum)
-
 });
 
 clearButton.addEventListener('click', clear);
@@ -97,6 +90,6 @@ function clear() {
 function operate() {
     if (operator == '+') {return +firstNum + +secondNum};
     if (operator == '-') {return +firstNum - +secondNum};
-    if (operator == '*') {return +firstNum * +secondNum};
-    if (operator == '/') {return +firstNum / +secondNum};
+    if (operator == 'x') {return +firstNum * +secondNum};
+    if (operator == '÷') {return +firstNum / +secondNum};
 };

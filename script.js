@@ -136,7 +136,7 @@ function numKeyFunc(e) {
 };
 
 function operatorKeyFunc(e) {
-    if (e.key == '+' || e.key == '-' || e.key == '/' || e.key == '*') {
+    if (e.key == '+' || e.key == '-' || e.key == '/' || e.key == '*' || e.key == 'x') {
         if (sum !== undefined) {
             firstNum = sum;
         } else if (firstNum === undefined) {
@@ -152,6 +152,7 @@ function operatorKeyFunc(e) {
                 secondNum = undefined;
             }
         };
+        if (e.key == 'x') {e.key = '*'};
         operator = e.key;
         tempValue = '';
     }

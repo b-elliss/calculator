@@ -167,3 +167,13 @@ function deleteKeyFunc(e) {
 function escKeyFunc(e) {
     if (e.key == 'Escape') {clear()}
 };
+
+document.addEventListener('keydown', function(e) {
+    const button = document.querySelector(`button[data-key="${e.keyCode}"]`);
+    button.classList.add('button-down');
+});
+
+document.addEventListener('keyup', function(e) {
+    const button = document.querySelector(`button[data-key="${e.keyCode}"]`);
+    button.classList.remove('button-down')
+})

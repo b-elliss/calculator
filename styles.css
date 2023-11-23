@@ -74,6 +74,10 @@
     background-color: #a39eaf;
 }
 
+.button-down {
+    background-color: #8c8896
+
+}
 .button:active {
     background-color: #8c8896
 }

@@ -1,6 +1,7 @@
 let sum;
 let firstNum; 
 let operator; 
+let tree;
 let secondNum;
 let tempValue = '';
 let display = document.querySelector('.display');
